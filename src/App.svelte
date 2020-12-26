@@ -122,15 +122,6 @@
 	
 	
 	<style>
-		.grid{
-			gap:10px;
-			display:grid;
-			grid-template-columns: repeat(auto-fit, minmax(240px, 1fr))
-		}
-		/* input{
-			margin:2px;
-			padding:10px;
-		} */
 		img{
 			min-width:100px;
 			width:150px;
@@ -149,13 +140,11 @@
 		}
 
 		table{
-			margin: 0 auto;
-			width:100%;
-			border-collapse: collapse;
-	    /* margin: 0px 25px 25px 0px; */
+		margin: 0 auto;
+		width:100%;
+		border-collapse: collapse;
 		font-size: 0.9em;
 		font-family: sans-serif;
-	/*     min-width: 300px; */
 		box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 		max-width:1200px;
 		}
