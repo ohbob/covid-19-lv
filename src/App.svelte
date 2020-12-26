@@ -90,7 +90,7 @@ async function getData() {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 	}
 	thead tr {
-    background-color: #A4343A;
+    background-color: #990000;
     color: #ffffff;
     text-align: left;
 }
@@ -107,11 +107,11 @@ tbody tr:nth-of-type(even) {
 }
 
 tbody tr:last-of-type {
-    border-bottom: 2px solid #A4343A;
+    border-bottom: 2px solid #990000;
 }
 	
 .active {
     font-weight: bold;
-    color: #A4343A;
+    color: #990000;
 } 
 </style>
