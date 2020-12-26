@@ -129,14 +129,8 @@
 			object-fit:fill;
 		}
 		main{
-
-			/* display:grid; */
-			grid-auto-flow: column;
-			grid-template-columns: 300px 1fr;
-			gap:20px;
-			/* max-width:960px; */
-			/* max-width: 1200px;; */
 			margin: 0 auto;
+			max-width:1200px;
 		}
 
 		table{
@@ -146,7 +140,7 @@
 		font-size: 0.9em;
 		font-family: sans-serif;
 		box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-		max-width:1200px;
+		
 		}
 		thead tr {
 		background-color: #990000;
