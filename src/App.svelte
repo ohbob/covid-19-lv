@@ -1,10 +1,12 @@
 <script>
+const iedzivotaji = 1907675
 let testi = 0
 let slimie = 0
+let filter = "" 
 let ipatsvars_value
-let filter = ""
-const iedzivotaji = 1919968
 
+const atlicis = input => iedzivotaji - input
+const percentage = (partialValue, totalValue) => ((100 * partialValue) / totalValue).toFixed(2)
 const numberFilter = (collection, key, value) => collection.filter(entry => entry[key] > value).reverse()
 
 async function getData() {
@@ -17,7 +19,7 @@ async function getData() {
     })
     return result
 }
-	const atlicis = input => iedzivotaji - input
+
 </script>
 
 {#await getData()}
@@ -25,12 +27,25 @@ async function getData() {
 {:then records}
 <main>
 <section>
-	<img src="https://www.crwflags.com/fotw/images/l/lv.gif" alt="Latvijas karogs"/>
-	<p>Populācija: {iedzivotaji}</p>
-	<p>Kopējais testu skaits: {testi}</p>
-	<p>Kopējais inficēto skaits: {slimie}</p>
-	<p>Atlicis notestēt: {atlicis(testi)}</p>
+	<article>
+		<img src="https://www.crwflags.com/fotw/images/l/lv.gif" alt="Latvijas karogs"/>
+		<h1>SARS-CoV-2 statistika Latvijā</h1>
+		<p>Kopējā populācija: {iedzivotaji} </p>
+		<p>Kopējais testu skaits: {testi} - %{percentage(testi, iedzivotaji)}</p>
+		<p>Kopējais inficēto skaits: {slimie} - %{percentage(slimie, iedzivotaji)}</p>
+		<p>Atlicis notestēt: {atlicis(testi)} - %{percentage(atlicis(testi), iedzivotaji)}</p>
+	</article>
+	
+	<article>
+		<h3>Datu avoti</h3>
+		<ul>
+			<li><a href="https://data.gov.lv/dati/lv/dataset/covid-19/resource/d499d2f0-b1ea-4ba2-9600-2c701b03bd4a">Covid-19 Izmeklējumi</a></li>
+			<li><a href="http://data1.csb.gov.lv/pxweb/lv/iedz/iedz__iedzskaits__ikgad/ISG010.px">Iedzīvotāju skaits</a></li>
+		</ul>
+	</article>
 </section>
+
+
 
 <section>
 <table>
@@ -71,7 +86,7 @@ async function getData() {
 	main{
 		display:grid;
 		grid-auto-flow: column;
-		grid-template-columns: 250px 1fr;
+		grid-template-columns: 300px 1fr;
 		gap:20px;
 		max-width:960px;
 		margin: 0 auto;
