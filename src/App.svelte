@@ -26,10 +26,10 @@ async function getData() {
 <main>
 <section>
 	<img src="https://www.crwflags.com/fotw/images/l/lv.gif" alt="Latvijas karogs"/>
-	<p>Populcija: {iedzivotaji}</p>
-	<p>Kopjais testu skaits: {testi}</p>
-	<p>Kopjais inficto skaits: {slimie}</p>
-	<p>Atlicis notestt: {atlicis(testi)}</p>
+	<p>Populācija: {iedzivotaji}</p>
+	<p>Kopējais testu skaits: {testi}</p>
+	<p>Kopējais inficēto skaits: {slimie}</p>
+	<p>Atlicis notestēt: {atlicis(testi)}</p>
 </section>
 
 <section>
@@ -38,8 +38,8 @@ async function getData() {
 	<tr>
 		<th>Datums</th>
 		<th>Testi</th>
-		<th>Infictie</th>
-		<th><input type=number bind:value={ipatsvars_value} placeholder="% *patsvars  (filtrs)"/></th>
+		<th>Inficētie</th>
+		<th><input type=number bind:value={ipatsvars_value} placeholder="% īpatsvars  (filtrs)"/></th>
 	</tr>
 	</thead>
 	<tbody>
