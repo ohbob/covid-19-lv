@@ -29,27 +29,53 @@
 	
 		<header> 
 				<article>
+					<img src="https://www.crwflags.com/fotw/images/l/lv.gif" alt="Latvijas karogs"/>
 					<h1>SARS-CoV-2 statistika Latvijā</h1>
-					<ul>
+					<table>
+						<tbody>
+							<tr>
+								<td><b>Populācija</b></td>
+								<td><b>Inficētie</b></td>
+								<td><b>Veiktie testi</b></td>
+								<td><b>Nepārbaudīti</b></td>
+							</tr>
+								<tr>
+									<td>{iedzivotaji}</td>
+									<td>{slimie}</td>
+									<td>{testi}</td>
+									<td>{atlicis(testi)}</td>
+								</tr>
+								<tr>
+									<td></td>
+									<td>{percentage(slimie, iedzivotaji)}%</td>
+									<td>{percentage(testi, iedzivotaji)}%</td>
+									<td>{percentage(atlicis(testi), iedzivotaji)}%</td>
+								</tr>
+						</tbody>
+					</table>
+					<p><small>Tiek uzskatīts, ka slimība sabiedrībā izplatās nekontrolēti, ja pozitīvo testu īpatsvars pārsniedz 4%</small></p>
+					<!-- <ul>
 						<li>Kopējā populācija: {iedzivotaji} </li>
-						<li>Kopējais inficēto skaits: {slimie} - %{percentage(slimie, iedzivotaji)}</li>
-						<li>Kopējais testu skaits: {testi} - %{percentage(testi, iedzivotaji)}</li>
-						<li>Atlicis notestēt: {atlicis(testi)} - %{percentage(atlicis(testi), iedzivotaji)}</li>
-					</ul>
+						<li>Kopējais inficēto skaits: {slimie} - {percentage(slimie, iedzivotaji)}%</li>
+						<li>Kopējais testu skaits: {testi} - %{percentage(testi, iedzivotaji)}%</li>
+						<li>Atlicis notestēt: {atlicis(testi)} - %{percentage(atlicis(testi), iedzivotaji)}%</li>
+					</ul> -->
+					
+				</article>
+				<article style="text-align:end;">
+				
 					<h3>Datu avoti</h3>
 				<ul>
 					<li><a href="https://data.gov.lv/dati/lv/dataset/covid-19/resource/d499d2f0-b1ea-4ba2-9600-2c701b03bd4a">Covid-19 Izmeklējumi</a></li>
 					<li><a href="http://data1.csb.gov.lv/pxweb/lv/iedz/iedz__iedzskaits__ikgad/ISG010.px">Iedzīvotāju skaits</a></li>
+					
 				</ul>
-				</article>
-				<article>
-					<img src="https://www.crwflags.com/fotw/images/l/lv.gif" alt="Latvijas karogs"/>
+					
 				</article>
 			
 			</header>
 
 	<section>
-		<p><small>(Tiek uzskatīts, ka slimība sabiedrībā izplatās nekontrolēti, ja pozitīvo testu īpatsvars pārsniedz 4%)</small></p>
 		<article>
 		
 			<div>
@@ -122,11 +148,18 @@
 	
 	
 	<style>
+		ul{
+			list-style-type: none;
+			margin: 0;
+			padding:0;
+		}
+
 		img{
-			min-width:100px;
-			width:150px;
+			width:100%;
+			
+			max-width:150px;
 			max-height:100px;
-			object-fit:fill;
+			object-fit:fit;
 		}
 		main{
 			margin: 0 auto;
@@ -173,14 +206,20 @@
 	}
 
 	header{
-		display: flex;
-		justify-content: space-between;
+		display: grid;
+  		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap:50px;
+	}
+
+	header article{
+		/* flex-wrap: wrap; */
 	}
 	header article img{
 		margin-block-start: 1em;
     	margin-block-end: 1em;
 	} 
 	section article{
+		margin-top:50px;
 		display:flex;
 		justify-content: space-between;
 		
