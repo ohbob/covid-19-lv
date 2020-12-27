@@ -2,6 +2,7 @@
 	const iedzivotaji = 1907675
 	let testi = 0
 	let slimie = 0
+	let mirusi = 0
 	let filter = "" 
 	let ipatsvars_value
 	let papildus = false
@@ -16,6 +17,7 @@
 		result.forEach(entry => {
 			testi += entry.TestuSkaits
 			slimie += entry.ApstiprinataCOVID19InfekcijaSkaits
+			mirusi += entry.MirusoPersonuSkaits
 		})
 		return result
 	}
@@ -38,29 +40,25 @@
 								<td><b>Inficētie</b></td>
 								<td><b>Veiktie testi</b></td>
 								<td><b>Nepārbaudīti</b></td>
+								<td><b>Miruši</b></td>
 							</tr>
 								<tr>
 									<td>{iedzivotaji}</td>
 									<td>{slimie}</td>
-									<td>{testi}</td>
 									<td>{atlicis(testi)}</td>
+									<td>{testi}</td>
+									<td>{mirusi}</td>
 								</tr>
 								<tr>
 									<td></td>
 									<td>{percentage(slimie, iedzivotaji)}%</td>
 									<td>{percentage(testi, iedzivotaji)}%</td>
 									<td>{percentage(atlicis(testi), iedzivotaji)}%</td>
+									<td>{percentage(mirusi, iedzivotaji)}%</td>
 								</tr>
 						</tbody>
 					</table>
-					<p><small>Tiek uzskatīts, ka slimība sabiedrībā izplatās nekontrolēti, ja pozitīvo testu īpatsvars pārsniedz 4%</small></p>
-					<!-- <ul>
-						<li>Kopējā populācija: {iedzivotaji} </li>
-						<li>Kopējais inficēto skaits: {slimie} - {percentage(slimie, iedzivotaji)}%</li>
-						<li>Kopējais testu skaits: {testi} - %{percentage(testi, iedzivotaji)}%</li>
-						<li>Atlicis notestēt: {atlicis(testi)} - %{percentage(atlicis(testi), iedzivotaji)}%</li>
-					</ul> -->
-					
+					<p><small>Tiek uzskatīts, ka slimība sabiedrībā izplatās nekontrolēti, ja pozitīvo testu īpatsvars pārsniedz 4%</small></p>			
 				</article>
 				<article style="text-align:end;">
 				
