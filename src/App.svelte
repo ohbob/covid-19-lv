@@ -65,7 +65,7 @@
 					<h3>Datu avoti</h3>
 				<ul>
 					<li><a href="https://data.gov.lv/dati/lv/dataset/covid-19/resource/d499d2f0-b1ea-4ba2-9600-2c701b03bd4a">Covid-19 Izmeklējumi</a></li>
-					<li><a href="http://data1.csb.gov.lv/pxweb/lv/iedz/iedz__iedzskaits__ikgad/ISG010.px">Iedzīvotāju skaits</a></li>
+					<li><a href="https://data1.csb.gov.lv/pxweb/lv/iedz/iedz__iedzskaits__ikgad/ISG010.px">Iedzīvotāju skaits</a></li>
 					
 				</ul>
 					
