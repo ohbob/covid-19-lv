@@ -58,7 +58,7 @@
 								</tr>
 						</tbody>
 					</table>
-					<p><small>Tiek uzskatīts, ka slimība sabiedrībā izplatās nekontrolēti, ja pozitīvo testu īpatsvars pārsniedz 4%</small></p>			
+					<p><small>Tiek uzskatīts, ka slimība sabiedrībā izplatās nekontrolēti, ja pozitīvo testu īpatsvars pārsniedz 4% robežu.</small></p>			
 				</article>
 				<article style="text-align:end;">
 				
@@ -66,7 +66,6 @@
 				<ul>
 					<li><a href="https://data.gov.lv/dati/lv/dataset/covid-19/resource/d499d2f0-b1ea-4ba2-9600-2c701b03bd4a">Covid-19 Izmeklējumi</a></li>
 					<li><a href="https://data1.csb.gov.lv/pxweb/lv/iedz/iedz__iedzskaits__ikgad/ISG010.px">Iedzīvotāju skaits</a></li>
-					
 				</ul>
 					
 				</article>
