@@ -1,23 +1,23 @@
 <script>
-	const iedzivotaji = 1907675
-	let testi = 0
-	let slimie = 0
-	let mirusi = 0
-	let filter = "" 
-	let ipatsvars_value
-	let papildus = false
-	const atlicis = input => iedzivotaji - input
-	const percentage = (partialValue, totalValue) => ((100 * partialValue) / totalValue).toFixed(2)
-	const numberFilter = (collection, key, value) => collection.filter(entry => entry[key] > value).reverse()
+	const population = 1907675
+	let tested = 0
+	let sick = 0
+	let dead = 0
+	let filter = ""
+	let sick_precentage
+	let show_more = false
+
+	const calculate_percentage = (partialValue, totalValue) => ((100 * partialValue) / totalValue).toFixed(2)
+	const filter_collection = (collection, key, value) => collection.filter(entry => entry[key] > value).reverse()
 	
 	async function getData() {
 		const res = await fetch('https://data.gov.lv/dati/lv/api/3/action/datastore_search?resource_id=d499d2f0-b1ea-4ba2-9600-2c701b03bd4a&limit=500');
 		const data = await res.json()
 		const result = data.result.records
 		result.forEach(entry => {
-			testi += entry.TestuSkaits
-			slimie += entry.ApstiprinataCOVID19InfekcijaSkaits
-			mirusi += entry.MirusoPersonuSkaits
+			tested += entry.TestuSkaits
+			sick += entry.ApstiprinataCOVID19InfekcijaSkaits
+			dead += entry.MirusoPersonuSkaits
 		})
 		return result
 	}
@@ -43,18 +43,18 @@
 								<td><b>Miruši</b></td>
 							</tr>
 								<tr>
-									<td>{iedzivotaji}</td>
-									<td>{slimie}</td>
-									<td>{atlicis(testi)}</td>
-									<td>{testi}</td>
-									<td>{mirusi}</td>
+									<td>{population}</td>
+									<td>{sick}</td>
+									<td>{tested}</td>
+									<td>{population - tested}</td>
+									<td>{dead}</td>
 								</tr>
 								<tr>
 									<td></td>
-									<td>{percentage(slimie, iedzivotaji)}%</td>
-									<td>{percentage(testi, iedzivotaji)}%</td>
-									<td>{percentage(atlicis(testi), iedzivotaji)}%</td>
-									<td>{percentage(mirusi, iedzivotaji)}%</td>
+									<td>{calculate_percentage(sick, population)}%</td>
+									<td>{calculate_percentage(tested, population)}%</td>
+									<td>{calculate_percentage(population - tested, population)}%</td>
+									<td>{calculate_percentage(dead, population)}%</td>
 								</tr>
 						</tbody>
 					</table>
@@ -76,10 +76,10 @@
 		<article>
 		
 			<div>
-				Izvērsti dati<input type=checkbox bind:checked={papildus}>
+				Izvērsti dati<input type=checkbox bind:checked={show_more}>
 			</div>	
 			<div>
-				<input id="ipatsvars" type=number bind:value={ipatsvars_value} placeholder="īpatsvara % filtrs"/>
+				<input id="ipatsvars" type=number bind:value={sick_precentage} placeholder="īpatsvara % filtrs"/>
 			</div>
 			
 			
@@ -95,7 +95,7 @@
 			<th>Inficētie</th>
 			<th>Miruši</th>
 			<th>Īpatsvars</th>
-			{#if papildus}
+			{#if show_more}
 				<th>Atves.</th>
 				<th>0-9</th>
 				<th>10-19</th>
@@ -111,14 +111,14 @@
 		</tr>
 		</thead>
 		<tbody>
-			{#each numberFilter(records, 'Ipatsvars', ipatsvars_value | 0) as record}
+			{#each filter_collection(records, 'Ipatsvars', sick_precentage | 0) as record}
 				<tr>
 					<td>{record.Datums.split("T00")[0]}</td>
 					<td>{record.TestuSkaits}</td>
 					<td>{record.ApstiprinataCOVID19InfekcijaSkaits}</td>
 					<td>{record.MirusoPersonuSkaits}</td>
-					<td class="active">{record.Ipatsvars}</td>
-					{#if papildus}
+					<td  class:active={record.Ipatsvars >= 4}> {record.Ipatsvars}</td>
+					{#if show_more}
 						<td>{record.IzarstetoPacientuSkaits}</td>
 						<td>{record['ApstiprinatiVecGr_0-9Gadi']}</td>
 						<td>{record['ApstiprinatiVecGr_10-19Gadi']}</td>
