@@ -76,7 +76,7 @@
                     Izvērsti dati<input type=checkbox bind:checked={show_more}>
                 </div>
                 <div>
-                    <input id="ipatsvars" type=number bind:value={sick_precentage} placeholder="īpatsvara % filtrs"/>
+                    <input type=number bind:value={sick_precentage} placeholder="īpatsvara % filtrs"/>
                 </div>
             </article>
 
@@ -146,10 +146,9 @@
 
     img {
         width: 100%;
-
         max-width: 150px;
         max-height: 100px;
-        object-fit: fit;
+        object-fit: fill;
     }
 
     main {
@@ -205,11 +204,7 @@
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         gap: 50px;
     }
-
-    header article {
-        /* flex-wrap: wrap; */
-    }
-
+    
     header article img {
         margin-block-start: 1em;
         margin-block-end: 1em;
