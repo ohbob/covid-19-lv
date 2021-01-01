@@ -32,25 +32,26 @@
 		<header> 
 				<article>
 					<img src="https://www.crwflags.com/fotw/images/l/lv.gif" alt="Latvijas karogs"/>
-					<h1>SARS-CoV-2 statistika Latvijā</h1>
+					<h1>SARS-CoV-2 izplatība Latvijā</h1>
+					<p>Populācija uz 01.01.2020 - {population}</p>
 					<table>
 						<tbody>
 							<tr>
-								<td><b>Populācija</b></td>
-								<td><b>Inficētie</b></td>
+<!--								<td><b>Populācija</b></td>-->
+								<td><b>Inficēti</b></td>
 								<td><b>Veiktie testi</b></td>
 								<td><b>Nepārbaudīti</b></td>
 								<td><b>Miruši</b></td>
 							</tr>
 								<tr>
-									<td>{population}</td>
+<!--									<td>{population}</td>-->
 									<td>{sick}</td>
 									<td>{tested}</td>
 									<td>{population - tested}</td>
 									<td>{dead}</td>
 								</tr>
 								<tr>
-									<td></td>
+<!--									<td></td>-->
 									<td>{calculate_percentage(sick, population)}%</td>
 									<td>{calculate_percentage(tested, population)}%</td>
 									<td>{calculate_percentage(population - tested, population)}%</td>
