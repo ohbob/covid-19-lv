@@ -117,7 +117,7 @@
 					<td>{record.TestuSkaits}</td>
 					<td>{record.ApstiprinataCOVID19InfekcijaSkaits}</td>
 					<td>{record.MirusoPersonuSkaits}</td>
-					<td  class:active={record.Ipatsvars >= 4}> {record.Ipatsvars}</td>
+					<td  class:active={record.Ipatsvars >= 4}> {record.Ipatsvars}%</td>
 					{#if show_more}
 						<td>{record.IzarstetoPacientuSkaits}</td>
 						<td>{record['ApstiprinatiVecGr_0-9Gadi']}</td>
