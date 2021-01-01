@@ -21,7 +21,6 @@
         })
         return result
     }
-
 </script>
 
 {#await getData()}
@@ -204,7 +203,7 @@
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         gap: 50px;
     }
-    
+
     header article img {
         margin-block-start: 1em;
         margin-block-end: 1em;
