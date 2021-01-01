@@ -204,6 +204,7 @@
 
 	header{
 		display: grid;
+		max-width:100%;
   		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 		gap:50px;
 	}
