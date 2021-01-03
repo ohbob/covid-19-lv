@@ -29,7 +29,7 @@
     <main>
         <header>
             <article>
-                <img src="https://www.crwflags.com/fotw/images/l/lv.gif" alt="Latvijas karogs"/>
+                <img src="/lv-karogs.png" alt="Latvijas karogs"/>
                 <h1>SARS-CoV-2 izplatība Latvijā</h1>
                 <p>Populācija uz 01.01.2020 - {population}</p>
                 <table>
