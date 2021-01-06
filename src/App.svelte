@@ -24,7 +24,7 @@
 </script>
 
 {#await getData()}
-    loading...
+    loading....
 {:then records}
     <main>
         <header>
