@@ -11,7 +11,7 @@
     const filter_collection = (collection, key, value) => collection.filter(entry => entry[key] > value).reverse()
 
     async function getData() {
-        const res = await fetch('https://data.gov.lv/dati/lv/api/3/action/datastore_search?resource_id=d499d2f0-b1ea-4ba2-9600-2c701b03bd4a&limit=500');
+        const res = await fetch('https://data.gov.lv/dati/lv/api/3/action/datastore_search?resource_id=d499d2f0-b1ea-4ba2-9600-2c701b03bd4a&limit=99999');
         const data = await res.json()
         const result = data.result.records
         result.forEach(entry => {
